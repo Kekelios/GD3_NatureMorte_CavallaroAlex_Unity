@@ -20,7 +20,14 @@ public class Pawn : MonoBehaviour
 
     public void TryMoving(int value)
     {
-        _playerData._cellNumber = _board.GetNextCellToMove(_playerData._cellNumber + value);
+        _playerData._cellNumber = _board.GetNextCellToMove(_playerData._cellNumber+value);
         MoveToCell();
+        ActivateCell();
+    }
+
+    private void ActivateCell()
+    {
+        Cell cell = _board.GetCellByNumber(_playerData._cellNumber);
+        cell.Activate(CurrentPawn:this);
     }
 }
