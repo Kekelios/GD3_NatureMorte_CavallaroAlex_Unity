@@ -4,6 +4,9 @@ public class Cell : MonoBehaviour, ICellActivable
 {
     public virtual void Activate(Pawn CurrentPawn)
     {
-        throw new System.NotImplementedException();
+       if(GetComponent<IActionnable>() != null)
+        {
+            GetComponent<IActionnable>().Action(CurrentPawn);
+        }
     }
 }
