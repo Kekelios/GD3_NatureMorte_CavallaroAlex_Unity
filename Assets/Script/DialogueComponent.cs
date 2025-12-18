@@ -13,7 +13,6 @@ public class DialogueComponent : MonoBehaviour, IActionnable
         // afficher ma ligne 
         _dialogueController.StartDialogue(this);
     }
-
     public DialogueRow GetDialogueRow()
     {
         return _dialogueData.rows[_currentRowIndex];
@@ -33,7 +32,8 @@ public class DialogueComponent : MonoBehaviour, IActionnable
     {
         if (_currentRow.nextRowNumber == -1)
         {
-            _dialogueController.EndDialogue(); 
+            _dialogueController.EndDialogue();
+            ResetDialogue();
         }
         else
         {
@@ -41,5 +41,10 @@ public class DialogueComponent : MonoBehaviour, IActionnable
             _currentRow = GetDialogueRow();
             _dialogueController.UpdateText();
         }
+    }
+
+    public void ResetDialogue()
+    {
+        _currentRowIndex = 0;
     }
 }   
