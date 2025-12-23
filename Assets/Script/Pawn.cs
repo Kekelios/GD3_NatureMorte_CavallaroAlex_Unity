@@ -6,6 +6,12 @@ public class Pawn : MonoBehaviour
     [SerializeField] private PlayerData _playerData;
     [SerializeField] private Board _board;
     [SerializeField] private PathSelector _pathSelector;
+    [SerializeField] private Dice _dice;
+
+    private void OnEnable()
+    {
+        _playerData._cellNumber = 0;
+    }
 
     private void Start()
     {
@@ -15,8 +21,8 @@ public class Pawn : MonoBehaviour
     private void MoveToCell()
     {
         Transform newPos = _board.GetCellByNumber(_playerData._cellNumber).transform;
-        transform.position = newPos.position;
-        transform.rotation = newPos.rotation;
+        transform.position = newPos.position + Vector3.up * 0.5f;
+        transform.rotation = Quaternion.identity;
     }
 
     public void TryMoving(int value)
@@ -27,6 +33,7 @@ public class Pawn : MonoBehaviour
         if (reachableCells.Count == 0)
         {
             Debug.LogWarning("No reachable cells found!");
+            if (_dice != null) _dice.EnableDiceRoll();
             return;
         }
 
@@ -45,6 +52,8 @@ public class Pawn : MonoBehaviour
         UpdateCellNumber(targetCell);
         MoveToCell();
         ActivateCell();
+
+        if (_dice != null) _dice.EnableDiceRoll();
     }
 
     private void UpdateCellNumber(Cell targetCell)
@@ -63,5 +72,10 @@ public class Pawn : MonoBehaviour
     {
         Cell cell = _board.GetCellByNumber(_playerData._cellNumber);
         cell.Activate(CurrentPawn: this);
+    }
+
+    public int GetCurrentCellNumber()
+    {
+        return _playerData._cellNumber;
     }
 }
