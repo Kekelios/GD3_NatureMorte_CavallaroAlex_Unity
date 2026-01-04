@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc18e76cfbe5ff246bffd6f15ce6935a, type: 3}
+  m_Name: Gladiator
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterType: 1
+  characterName: Minos
+  description: Ancien tailleur de pierre reconverti en gladiateur, il prend une pause
+    dans sa gladiature pour voyager.
+  portrait: {fileID: 0}
+  characterColor: {r: 0.4245283, g: 0.3216221, b: 0, a: 1}
+  hasSpecialAbility: 1
+  abilityDescription: "Il peut utiliser sa force \xE0 diverses fins. "

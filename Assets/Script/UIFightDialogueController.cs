@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,24 +19,23 @@ public class UIFightDialogueController : MonoBehaviour
 
     private FightingCell _currentFightingCell;
 
-    private void Start()
+    private void Awake()
     {
-        _fightButton.onClick.AddListener(OnFightClicked);
-        _gladiatorButton.onClick.AddListener(OnGladiatorClicked);
-        _fleeButton.onClick.AddListener(OnFleeClicked);
-        _continueButton.onClick.AddListener(OnContinueClicked);
+        if (_fightButton != null) _fightButton.onClick.AddListener(OnFightClicked);
+        if (_gladiatorButton != null) _gladiatorButton.onClick.AddListener(OnGladiatorClicked);
+        if (_fleeButton != null) _fleeButton.onClick.AddListener(OnFleeClicked);
+        if (_continueButton != null) _continueButton.onClick.AddListener(OnContinueClicked);
     }
 
     public void StartFightDialogue(FightingCell fightingCell)
     {
         _currentFightingCell = fightingCell;
-
         ResetDialogue();
 
         _titleText.text = "Minotaure";
         _descriptionText.text = "Un minotaure furieux bloque ton chemin ! Que fais-tu ?";
 
-        _fightDialoguePanel.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void ShowResult(string resultMessage)
@@ -46,29 +45,30 @@ public class UIFightDialogueController : MonoBehaviour
         _resultPanel.SetActive(true);
     }
 
-    private void ResetDialogue()
+    public void ResetDialogue()
     {
+        _fightDialoguePanel.SetActive(true);
         _choicesPanel.SetActive(true);
         _resultPanel.SetActive(false);
     }
 
-    private void OnFightClicked()
+    public void OnFightClicked()
     {
         _currentFightingCell.OnChoiceFight();
     }
 
-    private void OnGladiatorClicked()
+    public void OnGladiatorClicked()
     {
         _currentFightingCell.OnChoiceGladiator();
     }
 
-    private void OnFleeClicked()
+    public void OnFleeClicked()
     {
         _currentFightingCell.OnChoiceFlee();
     }
 
-    private void OnContinueClicked()
+    public void OnContinueClicked()
     {
-        _fightDialoguePanel.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
