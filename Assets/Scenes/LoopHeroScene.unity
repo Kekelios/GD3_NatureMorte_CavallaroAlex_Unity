@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 20998984}
   - component: {fileID: 20998983}
   m_Layer: 5
-  m_Name: DialoguePanel
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,6 +933,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 459241377}
+  - {fileID: 2666891209345287622}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &309694205
@@ -3706,7 +3707,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 289784670}
     m_Modifications:
     - target: {fileID: 2666891208199338681, guid: 9093fb287cf401348b450629a5f86031, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3774,7 +3775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556583715063609716, guid: 9093fb287cf401348b450629a5f86031, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5556583715063609716, guid: 9093fb287cf401348b450629a5f86031, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3788,8 +3789,7 @@ PrefabInstance:
       propertyPath: _board
       value: 
       objectReference: {fileID: 561741819}
-    m_RemovedComponents:
-    - {fileID: 7650672170069084614, guid: 9093fb287cf401348b450629a5f86031, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5176,6 +5176,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbddf2ae988855541abbb45f76929fdc, type: 3}
+--- !u!4 &2666891209345287622 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2666891208199338681, guid: 9093fb287cf401348b450629a5f86031, type: 3}
+  m_PrefabInstance: {fileID: 1559641983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3055456203801525947 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3055456204679299524, guid: 9093fb287cf401348b450629a5f86031, type: 3}
@@ -5308,7 +5313,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1861341400}
   - {fileID: 695291098}
-  - {fileID: 1559641983}
   - {fileID: 289784670}
   - {fileID: 561741818}
   - {fileID: 62610988}
